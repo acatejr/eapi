@@ -15,7 +15,6 @@ class Raingage(models.Model):
     # The current station name
     name = models.CharField(null=False, blank=False, unique=True, max_length=150)
 
-    # location = models.PointField(blank=True, null=True, srid=4326)
     latitude = models.DecimalField(blank=True, null=True, max_digits=15, decimal_places=5)
 
     longitude = models.DecimalField(blank=True, null=True, max_digits=15, decimal_places=5)
@@ -24,13 +23,10 @@ class Raingage(models.Model):
 
     updated = models.DateTimeField(auto_now=True)
 
-    # def latitude(self):
-    #     return self.location.y
-    #
-    # def longitude(self):
-    #     return self.location.x
-
     def __unicode__(self):
+        return u"%s" % self.name
+
+    def __str__(self):
         return u"%s" % self.name
 
     class Meta:
