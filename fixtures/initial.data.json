@@ -48,11 +48,927 @@
     }
 },
 {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "appeapi",
+        "model": "raingage"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "appeapi",
+        "model": "precipevent"
+    }
+},
+{
     "model": "sessions.session",
     "pk": "yd09sgpe7j3rzwqzgjgpzbc2vzfb0vgh",
     "fields": {
         "session_data": "OTQ0NTM2ODU0M2RjNTI5NzIwN2ZiMTg2MWQ2ZjViOWVlNGU4YzU2Nzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3OTMzZDhiNTkzZjZhOTJiZjlmODc0YzQ2ZWNhZjkzNjA4YWVlZTg2In0=",
         "expire_date": "2018-03-25T21:25:25.085Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 1,
+    "fields": {
+        "code": "DESST",
+        "name": "Desert Station",
+        "latitude": "31.88012",
+        "longitude": "-110.89980",
+        "created": "2018-03-12T02:53:24.666Z",
+        "updated": "2018-03-12T02:53:24.666Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 2,
+    "fields": {
+        "code": "NE",
+        "name": "Northeast",
+        "latitude": "31.90731",
+        "longitude": "-110.83300",
+        "created": "2018-03-12T02:53:24.699Z",
+        "updated": "2018-03-12T02:53:24.699Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 3,
+    "fields": {
+        "code": "LIMST",
+        "name": "Limestone",
+        "latitude": "31.87796",
+        "longitude": "-110.81360",
+        "created": "2018-03-12T02:53:24.723Z",
+        "updated": "2018-03-12T02:53:24.723Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 4,
+    "fields": {
+        "code": "FAGAN",
+        "name": "Fagan",
+        "latitude": "31.91734",
+        "longitude": "-110.79638",
+        "created": "2018-03-12T02:53:24.735Z",
+        "updated": "2018-03-12T02:53:24.735Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 5,
+    "fields": {
+        "code": "GRARI",
+        "name": "Gravelly Ridge",
+        "latitude": "31.83891",
+        "longitude": "-110.95128",
+        "created": "2018-03-12T02:53:24.744Z",
+        "updated": "2018-03-12T02:53:24.744Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 6,
+    "fields": {
+        "code": "MUHLE",
+        "name": "Muhlenbergia",
+        "latitude": "31.84393",
+        "longitude": "-110.87849",
+        "created": "2018-03-12T02:53:24.755Z",
+        "updated": "2018-03-12T02:53:24.755Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 7,
+    "fields": {
+        "code": "RODEN",
+        "name": "Rodent",
+        "latitude": "31.81090",
+        "longitude": "-110.88403",
+        "created": "2018-03-12T02:53:24.766Z",
+        "updated": "2018-03-12T02:53:24.766Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 8,
+    "fields": {
+        "code": "ROAD",
+        "name": "Road",
+        "latitude": "31.79524",
+        "longitude": "-110.88460",
+        "created": "2018-03-12T02:53:24.777Z",
+        "updated": "2018-03-12T02:53:24.777Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 9,
+    "fields": {
+        "code": "131",
+        "name": "Encl. No. 131",
+        "latitude": "31.79904",
+        "longitude": "-110.89844",
+        "created": "2018-03-12T02:53:24.788Z",
+        "updated": "2018-03-12T02:53:24.788Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 10,
+    "fields": {
+        "code": "AMADO",
+        "name": "Amado",
+        "latitude": "31.80618",
+        "longitude": "-110.94593",
+        "created": "2018-03-12T02:53:24.799Z",
+        "updated": "2018-03-12T02:53:24.799Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 11,
+    "fields": {
+        "code": "41",
+        "name": "Enclosure 41",
+        "latitude": "31.78200",
+        "longitude": "-110.91099",
+        "created": "2018-03-12T02:53:24.810Z",
+        "updated": "2018-03-12T02:53:24.810Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 12,
+    "fields": {
+        "code": "WHITE",
+        "name": "Whitehouse",
+        "latitude": "31.76784",
+        "longitude": "-110.88719",
+        "created": "2018-03-12T02:53:24.821Z",
+        "updated": "2018-03-12T02:53:24.821Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 13,
+    "fields": {
+        "code": "DESRI",
+        "name": "Desert Rim",
+        "latitude": "31.87489",
+        "longitude": "-110.84960",
+        "created": "2018-03-12T02:53:24.832Z",
+        "updated": "2018-03-12T02:53:24.832Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 14,
+    "fields": {
+        "code": "HUERF",
+        "name": "Huerfano",
+        "latitude": "31.85663",
+        "longitude": "-110.82287",
+        "created": "2018-03-12T02:53:24.844Z",
+        "updated": "2018-03-12T02:53:24.844Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 15,
+    "fields": {
+        "code": "RUELA",
+        "name": "Ruelas",
+        "latitude": "31.82946",
+        "longitude": "-110.80701",
+        "created": "2018-03-12T02:53:24.855Z",
+        "updated": "2018-03-12T02:53:24.855Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 16,
+    "fields": {
+        "code": "ERIOP",
+        "name": "Eriopoda",
+        "latitude": "31.83774",
+        "longitude": "-110.84289",
+        "created": "2018-03-12T02:53:24.867Z",
+        "updated": "2018-03-12T02:53:24.867Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 17,
+    "fields": {
+        "code": "45",
+        "name": "Enclosure 45",
+        "latitude": "31.81804",
+        "longitude": "-110.86139",
+        "created": "2018-03-12T02:53:24.877Z",
+        "updated": "2018-03-12T02:53:24.877Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 18,
+    "fields": {
+        "code": "BOX",
+        "name": "Box",
+        "latitude": "31.81009",
+        "longitude": "-110.84188",
+        "created": "2018-03-12T02:53:24.888Z",
+        "updated": "2018-03-12T02:53:24.888Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 19,
+    "fields": {
+        "code": "ROBIN",
+        "name": "Robinson",
+        "latitude": "31.79873",
+        "longitude": "-110.80782",
+        "created": "2018-03-12T02:53:24.899Z",
+        "updated": "2018-03-12T02:53:24.899Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 20,
+    "fields": {
+        "code": "DESGR",
+        "name": "Desert Grassland",
+        "latitude": "31.78399",
+        "longitude": "-110.86055",
+        "created": "2018-03-12T02:53:24.910Z",
+        "updated": "2018-03-12T02:53:24.910Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 21,
+    "fields": {
+        "code": "PARKE",
+        "name": "Parker",
+        "latitude": "31.78438",
+        "longitude": "-110.82535",
+        "created": "2018-03-12T02:53:24.921Z",
+        "updated": "2018-03-12T02:53:24.921Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 22,
+    "fields": {
+        "code": "FORES",
+        "name": "Forest",
+        "latitude": "31.77145",
+        "longitude": "-110.84927",
+        "created": "2018-03-12T02:53:24.932Z",
+        "updated": "2018-03-12T02:53:24.932Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 23,
+    "fields": {
+        "code": "FLORI",
+        "name": "Florida",
+        "latitude": "31.76120",
+        "longitude": "-110.84625",
+        "created": "2018-03-12T02:53:24.943Z",
+        "updated": "2018-03-12T02:53:24.943Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 24,
+    "fields": {
+        "code": "NW",
+        "name": "Northwest",
+        "latitude": "31.89701",
+        "longitude": "-110.90080",
+        "created": "2018-03-12T02:53:24.954Z",
+        "updated": "2018-03-12T02:53:24.954Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 25,
+    "fields": {
+        "code": "164",
+        "name": "Enclosure 164",
+        "latitude": "31.89066",
+        "longitude": "-110.87110",
+        "created": "2018-03-12T02:53:24.965Z",
+        "updated": "2018-03-12T02:53:24.965Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 26,
+    "fields": {
+        "code": "JOHNS",
+        "name": "Johnson Ranch",
+        "latitude": "31.89963",
+        "longitude": "-110.78525",
+        "created": "2018-03-12T02:53:24.976Z",
+        "updated": "2018-03-12T02:53:24.976Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 27,
+    "fields": {
+        "code": "191",
+        "name": "191",
+        "latitude": "31.89900",
+        "longitude": "-110.80954",
+        "created": "2018-03-12T02:53:24.987Z",
+        "updated": "2018-03-12T02:53:24.987Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 28,
+    "fields": {
+        "code": "192",
+        "name": "192",
+        "latitude": "31.89177",
+        "longitude": "-110.80494",
+        "created": "2018-03-12T02:53:24.998Z",
+        "updated": "2018-03-12T02:53:24.998Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 29,
+    "fields": {
+        "code": "CHOLL",
+        "name": "Cholla",
+        "latitude": "31.89097",
+        "longitude": "-110.84299",
+        "created": "2018-03-12T02:53:25.010Z",
+        "updated": "2018-03-12T02:53:25.010Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 30,
+    "fields": {
+        "code": "SCS#1",
+        "name": "SCS #1",
+        "latitude": "31.90945",
+        "longitude": "-110.89650",
+        "created": "2018-03-12T02:53:25.021Z",
+        "updated": "2018-03-12T02:53:25.021Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 31,
+    "fields": {
+        "code": "SCS5N",
+        "name": "SCS-5N",
+        "latitude": "31.88534",
+        "longitude": "-110.90124",
+        "created": "2018-03-12T02:53:25.032Z",
+        "updated": "2018-03-12T02:53:25.032Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 32,
+    "fields": {
+        "code": "163",
+        "name": "163",
+        "latitude": "31.88218",
+        "longitude": "-110.88032",
+        "created": "2018-03-12T02:53:25.043Z",
+        "updated": "2018-03-12T02:53:25.043Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 33,
+    "fields": {
+        "code": "161",
+        "name": "161",
+        "latitude": "31.86322",
+        "longitude": "-110.89474",
+        "created": "2018-03-12T02:53:25.054Z",
+        "updated": "2018-03-12T02:53:25.054Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 34,
+    "fields": {
+        "code": "PAST3",
+        "name": "Pasture 3",
+        "latitude": "31.85595",
+        "longitude": "-110.91818",
+        "created": "2018-03-12T02:53:25.065Z",
+        "updated": "2018-03-12T02:53:25.065Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 35,
+    "fields": {
+        "code": "HUGHE",
+        "name": "Hughes",
+        "latitude": "31.85540",
+        "longitude": "-110.91223",
+        "created": "2018-03-12T02:53:25.076Z",
+        "updated": "2018-03-12T02:53:25.076Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 36,
+    "fields": {
+        "code": "155",
+        "name": "155",
+        "latitude": "31.83851",
+        "longitude": "-110.91862",
+        "created": "2018-03-12T02:53:25.087Z",
+        "updated": "2018-03-12T02:53:25.087Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 37,
+    "fields": {
+        "code": "149",
+        "name": "149",
+        "latitude": "31.85240",
+        "longitude": "-110.85078",
+        "created": "2018-03-12T02:53:25.098Z",
+        "updated": "2018-03-12T02:53:25.098Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 38,
+    "fields": {
+        "code": "120",
+        "name": "120",
+        "latitude": "31.84187",
+        "longitude": "-110.84020",
+        "created": "2018-03-12T02:53:25.109Z",
+        "updated": "2018-03-12T02:53:25.109Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 39,
+    "fields": {
+        "code": "117",
+        "name": "117",
+        "latitude": "31.83636",
+        "longitude": "-110.85753",
+        "created": "2018-03-12T02:53:25.120Z",
+        "updated": "2018-03-12T02:53:25.120Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 40,
+    "fields": {
+        "code": "205",
+        "name": "Enclosure 205",
+        "latitude": "31.83352",
+        "longitude": "-110.84937",
+        "created": "2018-03-12T02:53:25.131Z",
+        "updated": "2018-03-12T02:53:25.132Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 41,
+    "fields": {
+        "code": "118",
+        "name": "118",
+        "latitude": "31.83296",
+        "longitude": "-110.84761",
+        "created": "2018-03-12T02:53:25.142Z",
+        "updated": "2018-03-12T02:53:25.142Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 42,
+    "fields": {
+        "code": "222",
+        "name": "222",
+        "latitude": "31.82851",
+        "longitude": "-110.86749",
+        "created": "2018-03-12T02:53:25.154Z",
+        "updated": "2018-03-12T02:53:25.154Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 43,
+    "fields": {
+        "code": "169",
+        "name": "169",
+        "latitude": "31.84648",
+        "longitude": "-110.80948",
+        "created": "2018-03-12T02:53:25.164Z",
+        "updated": "2018-03-12T02:53:25.164Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 44,
+    "fields": {
+        "code": "119",
+        "name": "119",
+        "latitude": "31.83263",
+        "longitude": "-110.83233",
+        "created": "2018-03-12T02:53:25.176Z",
+        "updated": "2018-03-12T02:53:25.176Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 45,
+    "fields": {
+        "code": "166",
+        "name": "166",
+        "latitude": "31.82884",
+        "longitude": "-110.82764",
+        "created": "2018-03-12T02:53:25.187Z",
+        "updated": "2018-03-12T02:53:25.187Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 46,
+    "fields": {
+        "code": "NRNCH",
+        "name": "North Ranch",
+        "latitude": "31.83187",
+        "longitude": "-110.80150",
+        "created": "2018-03-12T02:53:25.198Z",
+        "updated": "2018-03-12T02:53:25.198Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 47,
+    "fields": {
+        "code": "124",
+        "name": "124",
+        "latitude": "31.81563",
+        "longitude": "-110.81136",
+        "created": "2018-03-12T02:53:25.209Z",
+        "updated": "2018-03-12T02:53:25.209Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 48,
+    "fields": {
+        "code": "18",
+        "name": "Enclosure 18",
+        "latitude": "31.81363",
+        "longitude": "-110.81046",
+        "created": "2018-03-12T02:53:25.220Z",
+        "updated": "2018-03-12T02:53:25.220Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 49,
+    "fields": {
+        "code": "123",
+        "name": "123",
+        "latitude": "31.80848",
+        "longitude": "-110.81274",
+        "created": "2018-03-12T02:53:25.231Z",
+        "updated": "2018-03-12T02:53:25.231Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 50,
+    "fields": {
+        "code": "121",
+        "name": "121",
+        "latitude": "31.79790",
+        "longitude": "-110.81002",
+        "created": "2018-03-12T02:53:25.242Z",
+        "updated": "2018-03-12T02:53:25.242Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 51,
+    "fields": {
+        "code": "122",
+        "name": "122",
+        "latitude": "31.79071",
+        "longitude": "-110.81943",
+        "created": "2018-03-12T02:53:25.253Z",
+        "updated": "2018-03-12T02:53:25.253Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 52,
+    "fields": {
+        "code": "AIRST",
+        "name": "Airstrip",
+        "latitude": "31.80206",
+        "longitude": "-110.82918",
+        "created": "2018-03-12T02:53:25.264Z",
+        "updated": "2018-03-12T02:53:25.265Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 53,
+    "fields": {
+        "code": "IBP",
+        "name": "IBP",
+        "latitude": "31.79940",
+        "longitude": "-110.83219",
+        "created": "2018-03-12T02:53:25.275Z",
+        "updated": "2018-03-12T02:53:25.275Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 54,
+    "fields": {
+        "code": "152",
+        "name": "152",
+        "latitude": "31.79957",
+        "longitude": "-110.83430",
+        "created": "2018-03-12T02:53:25.286Z",
+        "updated": "2018-03-12T02:53:25.286Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 55,
+    "fields": {
+        "code": "115",
+        "name": "115",
+        "latitude": "31.80392",
+        "longitude": "-110.84662",
+        "created": "2018-03-12T02:53:25.297Z",
+        "updated": "2018-03-12T02:53:25.297Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 56,
+    "fields": {
+        "code": "223",
+        "name": "223",
+        "latitude": "31.80665",
+        "longitude": "-110.85118",
+        "created": "2018-03-12T02:53:25.308Z",
+        "updated": "2018-03-12T02:53:25.308Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 57,
+    "fields": {
+        "code": "130",
+        "name": "130",
+        "latitude": "31.80714",
+        "longitude": "-110.85796",
+        "created": "2018-03-12T02:53:25.320Z",
+        "updated": "2018-03-12T02:53:25.320Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 58,
+    "fields": {
+        "code": "116",
+        "name": "116",
+        "latitude": "31.81346",
+        "longitude": "-110.85405",
+        "created": "2018-03-12T02:53:25.331Z",
+        "updated": "2018-03-12T02:53:25.331Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 59,
+    "fields": {
+        "code": "114",
+        "name": "114",
+        "latitude": "31.79909",
+        "longitude": "-110.87440",
+        "created": "2018-03-12T02:53:25.342Z",
+        "updated": "2018-03-12T02:53:25.342Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 60,
+    "fields": {
+        "code": "113",
+        "name": "113",
+        "latitude": "31.80325",
+        "longitude": "-110.88620",
+        "created": "2018-03-12T02:53:25.353Z",
+        "updated": "2018-03-12T02:53:25.353Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 61,
+    "fields": {
+        "code": "140",
+        "name": "140",
+        "latitude": "31.80545",
+        "longitude": "-110.89781",
+        "created": "2018-03-12T02:53:25.364Z",
+        "updated": "2018-03-12T02:53:25.364Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 62,
+    "fields": {
+        "code": "SW",
+        "name": "Southwest",
+        "latitude": "31.81558",
+        "longitude": "-110.91398",
+        "created": "2018-03-12T02:53:25.375Z",
+        "updated": "2018-03-12T02:53:25.375Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 63,
+    "fields": {
+        "code": "187",
+        "name": "187",
+        "latitude": "31.80641",
+        "longitude": "-110.92939",
+        "created": "2018-03-12T02:53:25.386Z",
+        "updated": "2018-03-12T02:53:25.386Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 64,
+    "fields": {
+        "code": "188",
+        "name": "188",
+        "latitude": "31.82515",
+        "longitude": "-110.96153",
+        "created": "2018-03-12T02:53:25.397Z",
+        "updated": "2018-03-12T02:53:25.397Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 65,
+    "fields": {
+        "code": "185",
+        "name": "185",
+        "latitude": "31.78953",
+        "longitude": "-110.90943",
+        "created": "2018-03-12T02:53:25.408Z",
+        "updated": "2018-03-12T02:53:25.408Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 66,
+    "fields": {
+        "code": "125",
+        "name": "125",
+        "latitude": "31.77987",
+        "longitude": "-110.91041",
+        "created": "2018-03-12T02:53:25.419Z",
+        "updated": "2018-03-12T02:53:25.419Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 67,
+    "fields": {
+        "code": "184",
+        "name": "184",
+        "latitude": "31.77293",
+        "longitude": "-110.90146",
+        "created": "2018-03-12T02:53:25.430Z",
+        "updated": "2018-03-12T02:53:25.430Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 68,
+    "fields": {
+        "code": "WATRE",
+        "name": "Water Retention",
+        "latitude": "31.79244",
+        "longitude": "-110.88237",
+        "created": "2018-03-12T02:53:25.441Z",
+        "updated": "2018-03-12T02:53:25.441Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 69,
+    "fields": {
+        "code": "228",
+        "name": "228",
+        "latitude": "31.78763",
+        "longitude": "-110.87463",
+        "created": "2018-03-12T02:53:25.452Z",
+        "updated": "2018-03-12T02:53:25.452Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 70,
+    "fields": {
+        "code": "111",
+        "name": "111",
+        "latitude": "31.78864",
+        "longitude": "-110.87292",
+        "created": "2018-03-12T02:53:25.464Z",
+        "updated": "2018-03-12T02:53:25.464Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 71,
+    "fields": {
+        "code": "PA11A",
+        "name": "Pasture 11A",
+        "latitude": "31.78243",
+        "longitude": "-110.87477",
+        "created": "2018-03-12T02:53:25.475Z",
+        "updated": "2018-03-12T02:53:25.475Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 72,
+    "fields": {
+        "code": "110",
+        "name": "110",
+        "latitude": "31.78430",
+        "longitude": "-110.87025",
+        "created": "2018-03-12T02:53:25.486Z",
+        "updated": "2018-03-12T02:53:25.486Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 73,
+    "fields": {
+        "code": "112",
+        "name": "112",
+        "latitude": "31.78582",
+        "longitude": "-110.86138",
+        "created": "2018-03-12T02:53:25.497Z",
+        "updated": "2018-03-12T02:53:25.497Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 74,
+    "fields": {
+        "code": "229",
+        "name": "229",
+        "latitude": "31.78051",
+        "longitude": "-110.83206",
+        "created": "2018-03-12T02:53:25.508Z",
+        "updated": "2018-03-12T02:53:25.508Z"
+    }
+},
+{
+    "model": "appeapi.raingage",
+    "pk": 75,
+    "fields": {
+        "code": "MCGIB",
+        "name": "McGibbon",
+        "latitude": "31.77343",
+        "longitude": "-110.81320",
+        "created": "2018-03-12T02:53:25.519Z",
+        "updated": "2018-03-12T02:53:25.519Z"
     }
 },
 {
@@ -215,6 +1131,60 @@
         "name": "Can delete session",
         "content_type": 6,
         "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can add Raingage",
+        "content_type": 7,
+        "codename": "add_raingage"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can change Raingage",
+        "content_type": 7,
+        "codename": "change_raingage"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can delete Raingage",
+        "content_type": 7,
+        "codename": "delete_raingage"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can add Precip Event",
+        "content_type": 8,
+        "codename": "add_precipevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can change Precip Event",
+        "content_type": 8,
+        "codename": "change_precipevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can delete Precip Event",
+        "content_type": 8,
+        "codename": "delete_precipevent"
     }
 },
 {
