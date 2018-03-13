@@ -1,12 +1,3 @@
-db/
-.idea/
-.vscode/
-.env
-*.pyc
-*.log
-*.bak
-scratch*
-
 .DS_Store
 node_modules/
 /dist/
