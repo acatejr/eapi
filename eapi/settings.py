@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'eapi',
         'USER': 'postgres',
         'PASSWORD': os.getenv('POSTGRESQL_ROOT_PASSWORD'),
-        'HOST': '127.0.0.1'
+        'HOST': 'eapi_postgresdb_1'
     }
 }
 

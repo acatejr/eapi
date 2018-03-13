@@ -11,18 +11,19 @@ services:
       - ./db/postgresql/data:/var/lib/postgresql/data
     ports:
       - 5432:5432
-#  app:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile.python
-#    image: app
-#    env_file: .env
-#    volumes:
-#      - .:/opt/app
-#    depends_on:
-#      - postgresdb
-#    links:
-#      - postgresdb
-#    stdin_open: true
-#    tty: true
-#
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    image: app
+    env_file: .env
+    volumes:
+      - .:/opt/app
+    depends_on:
+      - postgresdb
+    links:
+      - postgresdb
+    stdin_open: true
+    tty: true
+    ports:
+      - 8000:8000
