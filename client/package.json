@@ -9,6 +9,11 @@
   "author": "Averill Cate, Jr <acatejr@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "poi": "^9.6.13"
+    "poi": "^9.6.13",
+    "postcss-import": "^11.1.0",
+    "postcss-url": "^7.3.1"
+  },
+  "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.2"
   }
 }
