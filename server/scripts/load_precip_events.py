@@ -1,5 +1,5 @@
 import os
-from appeapi.models import Raingage, PrecipEvent
+from appsrer.models import Raingage, PrecipEvent
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

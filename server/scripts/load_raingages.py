@@ -1,6 +1,6 @@
 # scripts/load_raingages.py
 import os
-from appeapi.models import Raingage
+from appsrer.models import Raingage
 from .convert_coords import utm_to_latlon
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
