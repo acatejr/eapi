@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'eapi',
-        'USER': 'postgres',
-        'PASSWORD': os.getenv('POSTGRESQL_ROOT_PASSWORD'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
         'HOST': 'eapi_postgresdb_1'
     }
 }
