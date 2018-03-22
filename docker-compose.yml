@@ -1,29 +1,13 @@
 version: '3'
 
 services:
-  postgresdb:
-    build:
-      context: .
-      dockerfile: Dockerfile.postgres
-    image: postresdb
-    env_file: .env
-    volumes:
-      - ./db/postgresql/data:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile.python
-    image: app
-    env_file: .env
-    volumes:
-      - .:/opt/app
-    depends_on:
-      - postgresdb
-    links:
-      - postgresdb
-    stdin_open: true
-    tty: true
-    ports:
-      - 8000:8000
+   eapi_mongo:
+     env_file: ./.env
+     build:
+       context: .
+       dockerfile: Dockerfile.mongo
+     image: mongodb
+     ports:
+       - 27017:27017
+     volumes:
+       - ./mongodb/data/db:/data/db

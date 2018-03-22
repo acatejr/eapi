@@ -1,0 +1,8 @@
+
+FROM mongo:latest
+LABEL maintainer="Averill Cate, Jr, <acatejr@gmail.com>"
+
+EXPOSE 27017
+
+RUN apt-get update --fix-missing -y
+RUN apt-get upgrade -y
