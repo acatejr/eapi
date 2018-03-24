@@ -11,16 +11,16 @@ services:
       - .docker/postgres/data:/var/lib/postgresql/data
     ports:
       - 5432:5432
-  mongodb:
-    build:
-      context: .
-      dockerfile: Dockerfile.mongo
-    image: eapi/mongodb
-    env_file: .env
-    volumes:
-      - .docker/mongo/data/db:/data/db
-    ports:
-      - 27017:27017
+  # mongodb:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.mongo
+  #   image: eapi/mongodb
+  #   env_file: .env
+  #   volumes:
+  #     - .docker/mongo/data/db:/data/db
+  #   ports:
+  #     - 27017:27017
   app:
     build:
       context: .
@@ -36,6 +36,8 @@ services:
     stdin_open: true
     tty: true
     links:
-      - mongodb
+      - pgdb
+      # - mongodb
     depends_on:
-      - mongodb
+      - pgdb
+      # - mongodb
