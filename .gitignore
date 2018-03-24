@@ -9,6 +9,7 @@ scratch*
 
 .DS_Store
 node_modules/
+frontend/node_modules/
 /dist/
 npm-debug.log*
 yarn-debug.log*

@@ -1,9 +1,0 @@
-FROM python:3.6
-EXPOSE 8000
-
-RUN apt-get update -y --fix-missing
-WORKDIR /opt/app
-ADD requirements.txt .
-RUN pip install -r requirements.txt
-
-CMD [ "bash" ]

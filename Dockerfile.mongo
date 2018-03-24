@@ -1,0 +1,4 @@
+FROM mongo:3.7.3
+EXPOSE 27017
+
+RUN apt-get update -y
