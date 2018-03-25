@@ -21,23 +21,22 @@ services:
   #     - .docker/mongo/data/db:/data/db
   #   ports:
   #     - 27017:27017
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    env_file: .env
-    image: eapi/app
-    ports:
-      - 5000:5000
-      # - 8080:8080
-    volumes:
-      - .:/opt/app    
-    # command: python server/app.py
-    stdin_open: true
-    tty: true
-    links:
-      - pgdb
-      # - mongodb
-    depends_on:
-      - pgdb
-      # - mongodb
+#   app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     env_file: .env
+#     image: eapi/app
+#     ports:
+#       - 5000:5000
+#     volumes:
+#       - .:/opt/app
+#     # command: python server/app.py
+#     stdin_open: true
+#     tty: true
+#     links:
+#       - pgdb
+#       # - mongodb
+#     depends_on:
+#       - pgdb
+#       # - mongodb
