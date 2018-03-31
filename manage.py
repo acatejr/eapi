@@ -58,6 +58,19 @@ station_name_map = [
     {"id": "131", "name": "Encl. No. 131"},
 ]
 
+def precip_values(values):
+    output = []
+
+    for k, v in enumerate(values):
+        if v in ['-9999', '']:
+            output.append(None)
+        else:
+            output.append(float(int(v) / 100.00))
+
+    return output
+
+
+
 def find_station_name(name):
     station_name = None
 
@@ -69,7 +82,7 @@ def find_station_name(name):
 
 @manager.command
 def load_precip_events():
-    Raingage.query.delete()
+    PrecipEvent.query.delete()
     print("Loading precip event data.")
     l = 0
     with open('./data/precip.csv', 'r') as f:
@@ -84,10 +97,23 @@ def load_precip_events():
                     station_name = find_station_name(station)
                 else:
                     station_name = station
-                print(station_name)
 
+                rg = Raingage.query.filter_by(name=station_name).first()
+                precip_vals = precip_values(values[2:])
+
+                for k, v in enumerate(precip_vals):
+                    month = k
+                    precip_event = PrecipEvent(
+                        raingage_id = rg.id,
+                        year = year,
+                        month = month,
+                        precip = v
+                    )
+
+                    db.session.add(precip_event)
             l += 1
 
+    db.session.commit()
     print("Done!")
 
 @manager.command
@@ -116,7 +142,8 @@ def load_raingages():
                     latitude = lat
                 )
                 db.session.add(rg)
-                db.session.commit()
+
+    db.session.commit()
 
     print("Done!")
 
