@@ -26,3 +26,4 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+*.sqlite3
