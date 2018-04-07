@@ -43,9 +43,7 @@ INSTALLED_APPS = [
     'graphene_django',
     'rest_framework',
     'rest_framework_swagger',
-    'appsrer'
-    # 'appsrer.apps.ProjectConfig',
-
+    'appsrer',
 ]
 
 MIDDLEWARE = [
