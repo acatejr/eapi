@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'graphene_django',
     'rest_framework',
     'rest_framework_swagger',
-    'appsrer.apps.ProjectConfig',
+    'appsrer'
+    # 'appsrer.apps.ProjectConfig',
 
 ]
 
@@ -84,9 +85,18 @@ WSGI_APPLICATION = 'eapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'eapidb.sqlite3'),
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'eapi',
+        'USER': 'postgres',
+        'PASSWORD': 'sql77',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
+
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'eapidb.sqlite3'),
+    # }
 }
 
 
