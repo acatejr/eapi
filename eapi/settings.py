@@ -137,7 +137,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL=reverse_lazy('home')
+# LOGIN_REDIRECT_URL=reverse_lazy('home')
 
 GRAPHENE = {
     'SCHEMA': 'appsrer.schema.schema'

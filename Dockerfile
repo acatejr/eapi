@@ -7,7 +7,9 @@ RUN apt-get install -y git build-essential libpq-dev python-dev sqlite3 libsqlit
 WORKDIR /opt/app
 COPY . /opt/app/
 RUN pip install -r requirements.txt
+# CMD [ "python", "/opt/app/manager.py", "runserver", "0.0.0.0:8000"]
 
+# command: python manager.py runserver 0.0.0.0:8000
 # FROM ubuntu:16.04
 
 # RUN apt-get update -y
