@@ -19,6 +19,8 @@ services:
         image: eapiapp
         ports:
             - 8000:8000
+        volumes:
+            - .:/opt/app/
         depends_on:
             - eapidb
         stdin_open: true
