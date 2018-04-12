@@ -12,19 +12,17 @@ class HomeView(TemplateView):
 
 class PrecipEventAPIView(APIView):
 
-    @staticmethod
     def get(self, request, format=None):
-        queryset = Raingage.objects.all()
-        serializer = RaingageSerializer(queryset, many=True)
+        queryset = PrecipEvent.objects.all()
+        serializer = PrecipEventSerializer(queryset, many=True)
         return Response(serializer.data)
 
 
 class RaingageAPIView(APIView):
 
-    @staticmethod
     def get(self, request, format=None):
-        queryset = PrecipEvent.objects.all()
-        serializer = PrecipEventSerializer(queryset, many=True)
+        queryset = Raingage.objects.all()
+        serializer = RaingageSerializer(queryset, many=True)
         return Response(serializer.data)
 
 
