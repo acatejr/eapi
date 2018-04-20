@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_swagger.views import get_swagger_view
 
-schema_view = get_swagger_view(title='EAPI API')
+schema_view = get_swagger_view(title='EAPI')
 
 urlpatterns = [
     path('', include('apphome.urls', namespace='home')),
