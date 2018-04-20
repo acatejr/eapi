@@ -9,3 +9,8 @@ scratch*
 .vscode/
 db/
 fixtures/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
