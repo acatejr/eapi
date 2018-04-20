@@ -1,0 +1,3 @@
+"Method","Name","# requests","# failures","Median response time","Average response time","Min response time","Max response time","Average Content Size","Requests/s"
+"GET","/graphql?query=%7B%0A%20%20raingages%20%7B%0A%20%20%20%20code%0A%20%20%20%20name%0A%20%20%20%20latitude%0A%20%20%20%20longitude%0A%20%20%7D%0A%7D&operationName=null",7300,11,50,53,20,290,5607,12.64
+"None","Total",7300,11,50,53,20,290,5607,12.64

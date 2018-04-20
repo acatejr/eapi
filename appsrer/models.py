@@ -1,8 +1,5 @@
 from django.db import models
 
-from django.db import models
-
-
 class BaseSrer(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
