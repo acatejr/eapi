@@ -30,6 +30,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'graphene_django',
+    'rest_framework',
+    'rest_framework_swagger',
     'apphome',
     'appsrer',
 ]
@@ -129,3 +132,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+GRAPHENE = {
+    'SCHEMA': 'appsrer.schema.schema'
+}
+
+SWAGGER_SETTINGS = {
+    'SHOW_REQUEST_HEADERS': True,
+    'SUPPORTED_SUBMIT_METHODS': [
+        'get',
+        'post',
+    ]
+}
