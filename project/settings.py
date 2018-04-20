@@ -13,7 +13,9 @@ SECRET_KEY = 'm(4x^$3hjzk5p&75s(srf3(p1^=22n_%9xe2@-&axim5^99pyg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'eapi-env.9uif6ke5vf.us-west-2.elasticbeanstalk.com'
+]
 
 
 # Application definition
@@ -108,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/Arizona'
 
 USE_I18N = True
 
