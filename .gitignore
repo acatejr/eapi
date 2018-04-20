@@ -1,0 +1,11 @@
+Dockerfile
+docker-compose.yml
+Pipfile
+Pipfile.lock
+scratch*
+.env
+*.pyc
+*.bak
+.vscode/
+db/
+fixtures/
