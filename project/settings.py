@@ -14,7 +14,9 @@ SECRET_KEY = 'm(4x^$3hjzk5p&75s(srf3(p1^=22n_%9xe2@-&axim5^99pyg'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'eapi-env.9uif6ke5vf.us-west-2.elasticbeanstalk.com'
+    'eapi-env.9uif6ke5vf.us-west-2.elasticbeanstalk.com',
+    '127.0.0.1:8000',
+    'localhost'
 ]
 
 
@@ -27,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apphome',
     'appsrer',
 ]
 
@@ -45,7 +48,8 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        # 'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
