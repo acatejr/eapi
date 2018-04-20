@@ -23,7 +23,7 @@ class Raingage(BaseSrer):
     longitude = models.DecimalField(null=True, blank=True, max_digits=15, decimal_places=5)
 
     class Meta:
-        app_label = 'appsrer'        
+        app_label = 'appsrer'
         verbose_name = 'Raingage'
         verbose_name_plural = 'Raingages'
 
@@ -37,17 +37,18 @@ class Raingage(BaseSrer):
         return self.name
 
 
-# class PrecipEvent(BaseSrer):
+class PrecipEvent(BaseSrer):
 
-#     year = models.IntegerField(blank=True, null=True)
+    year = models.IntegerField(blank=True, null=True)
 
-#     month = models.IntegerField(blank=True, null=True)
+    month = models.IntegerField(blank=True, null=True)
 
-#     precip = models.DecimalField(blank=True, null=True, max_digits=50, decimal_places=10)
+    precip = models.DecimalField(blank=True, null=True, max_digits=50, decimal_places=10)
 
-#     raingage = models.ForeignKey(Raingage, on_delete=models.CASCADE, db_index=True)
+    raingage = models.ForeignKey(Raingage, on_delete=models.CASCADE, db_index=True)
 
-#     class Meta:
-#         verbose_name = 'Precip Events'
-#         verbose_name_plural = 'Precip Events'
+    class Meta:
+        app_label = 'appsrer'
+        verbose_name = 'Precip Events'
+        verbose_name_plural = 'Precip Events'
 

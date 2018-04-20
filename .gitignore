@@ -1,3 +1,4 @@
+.editorconfig
 Dockerfile
 docker-compose.yml
 Pipfile
