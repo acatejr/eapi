@@ -1,3 +1,0 @@
-FROM mdillon/postgis:9.5-alpine
-EXPOSE 5432
-RUN apk update
