@@ -73,6 +73,7 @@ def find_station_name(name):
 def run():
     print("Loading precip data.")
     PrecipEvent.objects.all().delete()
+    events = []
     # STATION|YEAR|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC|||
     i = 0
     with open(BASE_DIR + '/scripts/srer_precip.csv', 'r') as f:
@@ -99,7 +100,11 @@ def run():
                 for k, v in enumerate(precip_vals):
                     # month = PrecipEvent.MONTH_CHOICES[k][0]
                     event = PrecipEvent(raingage=raingage, year=year, month=k, precip=v)
-                    event.save()
+                    events.append(event)
+                    # event.save()
             i += 1
+
+    if events:
+        PrecipEvent.objects.bulk_create(events)
 
     print("Done.")
