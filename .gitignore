@@ -12,6 +12,7 @@ scratch*
 db/
 fixtures/
 data/
+temp/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
