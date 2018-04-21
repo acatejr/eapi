@@ -7,9 +7,11 @@ scratch*
 .env
 *.pyc
 *.bak
+
 .vscode/
 db/
 fixtures/
+data/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
