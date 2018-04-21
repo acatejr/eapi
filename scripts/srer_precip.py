@@ -75,7 +75,7 @@ def run():
     PrecipEvent.objects.all().delete()
     # STATION|YEAR|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC|||
     i = 0
-    with open(BASE_DIR + '/scripts/precip.csv', 'r') as f:
+    with open(BASE_DIR + '/scripts/srer_precip.csv', 'r') as f:
         for line in f.readlines():
             if i > 0:
                 values = line.strip().split('|')

@@ -10,7 +10,7 @@ def run():
     print("Importing SRER raingage data.")
     Raingage.objects.all().delete()
 
-    with open('scripts/raingages.csv', 'r') as f:
+    with open('scripts/srer_raingages.csv', 'r') as f:
         for i, l in enumerate(f.readlines()):
             if i > 0:
                 values = l.strip().split('|')
