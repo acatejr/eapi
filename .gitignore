@@ -13,6 +13,7 @@ db/
 fixtures/
 data/
 temp/
+venv/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
