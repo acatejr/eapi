@@ -20,5 +20,5 @@ class RaingageAdmin(admin.ModelAdmin):
 @admin.register(PrecipEvent)
 class PrecipEventAdmin(admin.ModelAdmin):
     list_display = ['id', 'raingage', 'year', 'month', 'precip']
-    list_per_page = 20
+    list_per_page = 15
 

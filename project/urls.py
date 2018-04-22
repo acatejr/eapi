@@ -8,6 +8,6 @@ urlpatterns = [
     path('', include('apphome.urls', namespace='home')),
     path('srer/', include('appsrer.urls', namespace='srer')),
     path('wgew/', include('appwgew.urls', namespace='wgew')),
-    path('apidocs/', schema_view),
+    path('apidocs/', schema_view, name='apidocs'),
     path('admin/', admin.site.urls),
 ]
