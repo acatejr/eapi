@@ -7,6 +7,7 @@ schema_view = get_swagger_view(title='EAPI')
 urlpatterns = [
     path('', include('apphome.urls', namespace='home')),
     path('srer/', include('appsrer.urls', namespace='srer')),
-    path('docs/', schema_view),
+    path('wgew/', include('appwgew.urls', namespace='wgew')),
+    path('apidocs/', schema_view),
     path('admin/', admin.site.urls),
 ]
