@@ -137,13 +137,11 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 GRAPHENE = {
-    'SCHEMA': 'appsrer.schema.schema'
 }
 
 SWAGGER_SETTINGS = {
     'SHOW_REQUEST_HEADERS': True,
     'SUPPORTED_SUBMIT_METHODS': [
         'get',
-        'post',
     ]
 }
