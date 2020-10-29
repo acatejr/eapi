@@ -1,21 +1,9 @@
 .editorconfig
-Dockerfile
-docker-compose.yml
-Pipfile
-Pipfile.lock
 scratch*
 .env
 *.pyc
 *.bak
-
 .vscode/
-db/
-fixtures/
-data/
 temp/
 venv/
 
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
