@@ -1,3 +1,0 @@
-"Method","Name","# requests","# failures","Median response time","Average response time","Min response time","Max response time","Average Content Size","Requests/s"
-"GET","/api/srer/v1.0/raingages",8321,0,27,27,8,97,6509,14.20
-"None","Total",8321,0,27,27,8,97,6509,14.20
