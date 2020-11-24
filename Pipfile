@@ -9,6 +9,7 @@ pytest = "*"
 [packages]
 pip = "*"
 flask = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.9"

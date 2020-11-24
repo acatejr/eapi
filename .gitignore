@@ -6,4 +6,4 @@ scratch*
 .vscode/
 temp/
 venv/
-
+.pytest_cache/
