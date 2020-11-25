@@ -3,6 +3,7 @@ scratch*
 .env
 *.pyc
 *.bak
+.pyenv
 .vscode/
 temp/
 venv/

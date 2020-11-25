@@ -19,7 +19,7 @@ services:
     #         - 8000:80
     server:
         env_file: .env
-        ports: 
+        ports:
           - 5000:5000
         container_name: eapi_server
         build:
@@ -27,4 +27,4 @@ services:
             context: .
         volumes:
             - $PWD/server:/opt/server
-        command: ["bash"]
+        command: ["flask", "run", "-h", "0.0.0.0"]
