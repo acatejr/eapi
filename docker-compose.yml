@@ -26,5 +26,5 @@ services:
             dockerfile: Dockerfile
             context: .
         volumes:
-            - $PWD/server:/opt/server
+            - $PWD:/opt/server
         command: ["flask", "run", "-h", "0.0.0.0"]
