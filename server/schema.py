@@ -9,7 +9,8 @@ class Query(graphene.ObjectType):
     def resolve_status(self, info):
         """Displays simple api status message.
         """
-        now = datetime.now()
-        return '{}'.format(now.strftime('%I:%H:%S - %m.%d.%Y'))
+        # now = datetime.now()
+        # return '{}'.format(now.strftime('%I:%H:%S - %m.%d.%Y'))
+        return "ok"
 
 schema = graphene.Schema(query=Query)
