@@ -1,5 +1,7 @@
 name: ci
-on: [push]
+on:
+   push:
+      branches: [ master ]
 jobs:
    show-message:
       runs-on: ubuntu-latest
@@ -9,3 +11,4 @@ jobs:
          - run: pip install -r requirements.txt
          - run: coverage run -m pytest
          - run: coverage report
+
