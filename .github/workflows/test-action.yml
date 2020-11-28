@@ -4,4 +4,5 @@ jobs:
    show-message:
       runs-on: ubuntu-latest
       steps:
-         - run: echo "test-action"
+         - uses: actions/checkout@v2
+         - run: pip install -r requirements.txt
