@@ -3,7 +3,7 @@ import graphene
 from graphene import relay
 
 class Query(graphene.ObjectType):
-    node = relay.Node.Field()
+    # node = relay.Node.Field()
     status = graphene.String(description='API status')
 
     def resolve_status(self, info):
@@ -14,3 +14,4 @@ class Query(graphene.ObjectType):
         return "ok"
 
 schema = graphene.Schema(query=Query)
+# schema = None

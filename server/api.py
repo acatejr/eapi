@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from flask_graphql import GraphQLView
-from schema import schema
+from .schema import schema
 
 server = Flask(__name__)
 server.add_url_rule(

@@ -1,6 +1,7 @@
 aniso8601==7.0.0
 attrs==20.3.0
 click==7.1.2
+coverage==5.3
 Flask==1.1.2
 Flask-GraphQL==2.0.1
 graphene==2.1.8
