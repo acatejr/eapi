@@ -2,5 +2,6 @@ name: test-action
 on: [push]
 jobs:
    show-message:
-   steps:
-      - run: echo "test-action"
+      runs-on: ubuntu-latest
+      steps:
+         - run: echo "test-action"
