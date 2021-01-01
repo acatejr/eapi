@@ -38,5 +38,11 @@ def raingages():
 
     click.echo("Done!")
 
+def precip():
+    url = ""
+    click.echo("Downloading precipitation data.")
+    click.echo("Download source: {}".format(url)) 
+
 if __name__ == "__main__":    
-    main()
+    precip()
+    # main()
