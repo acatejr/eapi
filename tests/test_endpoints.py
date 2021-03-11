@@ -12,5 +12,6 @@ def test_status(client):
     assert resp.status == '200 OK'
 
 def test_api_status(client):
-    pytest.fail("Implement me!")
-
+    assert client is not None
+    resp = client.get('/api/status', query='{status}')
+    assert resp.status == '200 OK'

@@ -1,0 +1,8 @@
+temp/
+tmp/
+*.tmp
+*.temp
+*.pyc
+scratch.*
+__pycache__/
+tests/__pycache__/
