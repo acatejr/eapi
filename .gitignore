@@ -1,10 +1,9 @@
-*.pyc
-*.tmp
-
-venv/
 env/
-
-server/db.sqlite3
+venv/
+*.sqlite
+*.sqlite3
+*.pyc
+.vscode/
 **/migrations
 *.DS_Store
 **/__pycache__
