@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'graphene_django',
-    'api',
+    'apps.api',
 ]
 
 MIDDLEWARE = [
@@ -123,5 +123,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 GRAPHENE = {
-    'SCHEMA': 'api.schema.schema'
+    'SCHEMA': 'apps.api.schema.schema'
 }

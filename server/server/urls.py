@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.views.decorators.csrf import csrf_exempt
 from graphene_django.views import GraphQLView
 
-from api.schema import schema
+from apps.api.schema import schema
 
 urlpatterns = [
     path('admin/', admin.site.urls),
