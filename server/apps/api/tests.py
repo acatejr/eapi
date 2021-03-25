@@ -11,7 +11,6 @@ def test_api_index():
     response = client.execute(query)
     print(dir(response))
     assert response == {'data': {'status': 'status'}}
-    assert False
 
 def test_wgew_all_raingages():
     """Test query for all WGEW raingages"""
