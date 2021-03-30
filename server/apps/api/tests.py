@@ -9,7 +9,6 @@ def test_api_index():
     client = Client(schema)
     query = '''{status}'''
     response = client.execute(query)
-    print(dir(response))
     assert response == {'data': {'status': 'status'}}
 
 def test_wgew_all_raingages():
