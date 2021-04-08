@@ -1,9 +1,15 @@
 from django.db import models
 
-# Create your models here.
+class BaseWgew(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+        db_tablespace = 'wgew'
 
 class Raingage(models.Model):
-    """watershed_id|gage_id|east|north|elevation|err"""
+    """Walnut Gulch experimental watershed raingage"""
 
     gage_id = models.CharField(null=True, blank=True, max_length=125)
 
@@ -21,10 +27,10 @@ class Raingage(models.Model):
 
     updated = models.DateTimeField(auto_now=True)
 
-    # class Meta:
-    #     app_label = 'appwgew'
-    #     verbose_name = 'Raingage'
-    #     verbose_name_plural = 'Raingages'
+    class Meta:
+        app_label = 'wgew'
+        verbose_name = 'Raingage'
+        verbose_name_plural = 'Raingages'
 
     def __repr__(self):
         return u'{}'.format(self.id)

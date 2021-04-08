@@ -6,7 +6,10 @@ from apps.wgew.models import Raingage
 
 def run():
     """Run wgew raingages."""
+
     sys.stdout.write("Retrieving WGEW raingages.\n")
+    delete_raingages()
+
     with open('../data/wgew_raingages.csv', 'r') as f:
         for i, l in enumerate(f.readlines()):
             if i > 0:
@@ -29,14 +32,7 @@ def run():
                 )
                 rg.save()
 
-                """
-                rg = Raingage(
-                    watershed_id = watershed_id,
-                    gage_id = gage_id,
-                    latitude = lat,
-                    longitude = lng,
-                    elevation = elevation,
-                    err = err
-                )
-                rg.save()
-                """
+def delete_raingages():
+    raingages = Raingage.objects.all()
+    if (len(raingages) > 0):
+        raingages.delete()
