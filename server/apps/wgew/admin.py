@@ -9,7 +9,7 @@ class PrecipEventInline(admin.TabularInline):
 class RaingageAdmin(admin.ModelAdmin):
     list_display = ['id', 'watershed_id', 'gage_id', 'elevation', 'created', 'updated']
     list_filter = ['watershed_id', 'gage_id',]
-    inlines = [PrecipEventInline]
+    # inlines = [PrecipEventInline]
     list_per_page = 15
 
 
