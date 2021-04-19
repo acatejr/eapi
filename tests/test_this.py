@@ -1,4 +1,6 @@
 import pytest
 
-def test_should_fail():
-   pytest.fail("Implement tests!")
+def test_api_root():
+    """Tests /api endpoint"""
+
+    pytest.fail("Implement me!")
