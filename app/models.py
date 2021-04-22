@@ -13,6 +13,10 @@ class WGEWRaingage(Base):
 
     updated = Column(DateTime(timezone=True), onupdate=func.now())
 
+    def __repr__(self):
+        return "<WGEWRaingage(id={}, created={}, updated={})>".format(self.id, self.created, self.updated)
+
+        # return super().__repr__()
 
 # DT = Column(DateTime(timezone=True), default=func.now())
 # from django.db import models

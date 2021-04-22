@@ -12,7 +12,6 @@ SQLALCHEMY_DATABASE_URL = "postgresql://{}:{}@{}:5432/{}".format(
     os.getenv("POSTGRES_HOST"),
     os.getenv("POSTGRES_DATABASE")
 )
-# SQLALCHEMY_DATABASE_URL = url # "postgresql://" + os.getenv("POSTGRES_USER") + ":" + ç + ":5432/" + os.getenv("POSTGRES_DATABASE")
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
