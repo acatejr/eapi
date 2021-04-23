@@ -42,7 +42,16 @@ def test_delete_raingage():
     target_rg = db.query(WGEWRaingage).filter_by(id=target_id).first()
     assert target_rg is None
 
-"""
 def test_create_precip_event():
     pytest.fail("Implement me!")
-"""
+
+def test_read_precip_event():
+    pytest.fail("Implement me!")
+
+def test_update_precip_event():
+    pytest.fail("Implement me!")
+
+def test_delete_precip_event():
+    pytest.fail("Implement me!")
+
+
