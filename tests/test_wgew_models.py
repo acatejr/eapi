@@ -2,7 +2,7 @@ import datetime
 from datetime import timedelta
 
 import pytest
-from app.models import WGEWRaingage
+from app.models import WGEWRaingage, WGEWPrecipEvent
 from app.database import SessionLocal, engine
 
 db = SessionLocal()
@@ -43,7 +43,11 @@ def test_delete_raingage():
     assert target_rg is None
 
 def test_create_precip_event():
-    pytest.fail("Implement me!")
+    wgew_pe = WGEWPrecipEvent()
+    db.add(wgew_pe)
+    db.commit()
+    pe = db.query(WGEWPrecipEvent).filter_by(id=wgew_pe.id).first()
+    assert pe.id == wgew_pe.id
 
 def test_read_precip_event():
     pytest.fail("Implement me!")

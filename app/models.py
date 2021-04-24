@@ -5,7 +5,7 @@ from sqlalchemy.sql import func
 from .database import Base
 
 class WGEWRaingage(Base):
-    __tablename__ = "wgew_raingages"
+    __tablename__ = "wgew_raingage"
 
     id = Column(Integer, primary_key=True, index=True)
 
@@ -17,6 +17,16 @@ class WGEWRaingage(Base):
         return "<WGEWRaingage(id={}, created={}, updated={})>".format(self.id, self.created, self.updated)
 
         # return super().__repr__()
+
+class WGEWPrecipEvent(Base):
+
+    __tablename__ = "wgew_precipevent"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    created = Column(DateTime(timezone=True), server_default=func.now())
+
+    updated = Column(DateTime(timezone=True), onupdate=func.now())
 
 # DT = Column(DateTime(timezone=True), default=func.now())
 # from django.db import models
