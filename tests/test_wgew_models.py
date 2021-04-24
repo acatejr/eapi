@@ -50,12 +50,30 @@ def test_create_precip_event():
     assert pe.id == wgew_pe.id
 
 def test_read_precip_event():
-    pytest.fail("Implement me!")
+    db.add(WGEWPrecipEvent())
+    db.commit()
+    pe = db.query(WGEWPrecipEvent).all()[0]
+    assert pe is not None
 
 def test_update_precip_event():
-    pytest.fail("Implement me!")
+    pe = WGEWPrecipEvent()
+    db.add(pe)
+    db.commit()
+    id = pe.id
+
+    pe = db.query(WGEWPrecipEvent).filter_by(id=id).first()
+    pe.updated = datetime.datetime.utcnow()
+    db.add(WGEWPrecipEvent())
+    db.commit()
+    assert pe.updated is not None
 
 def test_delete_precip_event():
-    pytest.fail("Implement me!")
+    pe = WGEWPrecipEvent()
+    db.add(pe)
+    db.commit()
 
+    target_id = pe.id
+    db.query(WGEWPrecipEvent).filter(WGEWPrecipEvent.id == target_id).delete()
+    target_pe = db.query(WGEWPrecipEvent).filter_by(id=target_id).first()
+    assert target_pe is None
 
