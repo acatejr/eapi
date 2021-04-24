@@ -1,8 +1,8 @@
-"""Started building wgew preceip event model
+"""WGEW one-to-many on raingages to precip events. Update again
 
-Revision ID: bc73a78818d6
-Revises: 430a296fc4a4
-Create Date: 2021-04-23 17:25:19.480058
+Revision ID: e339d201931a
+Revises: 8c6f6bab7fd7
+Create Date: 2021-04-24 16:38:10.403789
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'bc73a78818d6'
-down_revision = '430a296fc4a4'
+revision = 'e339d201931a'
+down_revision = '8c6f6bab7fd7'
 branch_labels = None
 depends_on = None
 

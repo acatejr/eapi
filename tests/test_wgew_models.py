@@ -3,9 +3,11 @@ from datetime import timedelta
 
 import pytest
 from app.models import WGEWRaingage, WGEWPrecipEvent
-from app.database import SessionLocal, engine
+# from app.database import SessionLocal, engine
+from app.database import db_session, engine
 
-db = SessionLocal()
+# db = SessionLocal()
+db = db_session()
 
 def test_create_raingage():
     wgew_rg = WGEWRaingage()
