@@ -78,4 +78,3 @@ def test_delete_precip_event():
     db.query(WGEWPrecipEvent).filter(WGEWPrecipEvent.id == target_id).delete()
     target_pe = db.query(WGEWPrecipEvent).filter_by(id=target_id).first()
     assert target_pe is None
-
