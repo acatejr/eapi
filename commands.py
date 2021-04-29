@@ -3,9 +3,38 @@ from pathlib import Path
 import fire
 from cmds.geotools import utm_to_latlon
 from app.models import WGEWRaingage, WGEWPrecipEvent
+from app.models import SRERRaingage
 from app.database import db_session, engine
 
 db = db_session()
+
+def load_srer_raingages():
+    print("Importing SRER raingage data.")
+    SRERRaingage.query.delete()
+    with engine.connect() as con:
+        con.execute('ALTER SEQUENCE srer_raingage_id_seq RESTART WITH 1')
+    db.commit()
+
+    with open('data/srer_raingages.csv', 'r') as f:
+        for i, l in enumerate(f.readlines()):
+            if i > 0:
+                values = l.strip().split('|')
+                station_code = values[0]
+                current_station_name = values[1]
+                xcoord = values[2]
+                ycoord = values[3]
+                lat, lng = utm_to_latlon(12, float(xcoord), float(ycoord))
+                rg = SRERRaingage(
+                    station_code = station_code,
+                    current_station_name = current_station_name,
+                    latitude = lat,
+                    longitude = lng
+                )
+                db.add(rg)
+        db.commit()
+    db.close()
+
+    print("Done!")
 
 def load_wgew_precipevents():
     """Loads WGEW precip event data"""
@@ -17,9 +46,6 @@ def load_wgew_precipevents():
         con.execute('ALTER SEQUENCE wgew_precipevent_id_seq RESTART WITH 1')
     db.commit()
     
-    # ALTER SEQUENCE wgew_raingage_id_seq RESTART WITH 1
-
-
     with open('data/wgew_precip_events.csv', 'r') as f:
         current_raingage_id = None
         rg = None
@@ -118,5 +144,6 @@ def load_wgew_raingages():
 if __name__ == '__main__':
     fire.Fire({
         'load_wgew_raingages': load_wgew_raingages,
-        'load_wgew_precipevents': load_wgew_precipevents
+        'load_wgew_precipevents': load_wgew_precipevents,
+        'load_srer_raingages': load_srer_raingages,
     })

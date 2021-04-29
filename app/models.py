@@ -5,7 +5,33 @@ from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship, backref
 from .database import Base
 
+
+class SRERRaingage(Base):
+    """STATION CODE CURRENT STATION NAME X-COORD Y-COORD
+    NE|Northeast|515790|3530174
+
+    """
+
+    __tablename__ = "srer_raingage"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    station_code = Column(String(length=25), nullable=True)
+
+    current_station_name = Column(String(length=25), nullable=True)
+
+    latitude = Column(Numeric(precision=15, scale=5), nullable=True)
+
+    longitude = Column(Numeric(precision=15, scale=5), nullable=True)
+
+    created = Column(DateTime(timezone=True), server_default=func.now())
+
+    updated = Column(DateTime(timezone=True), onupdate=func.now())
+
+
 class WGEWRaingage(Base):
+    """Walnut Gulch Experimental Watershed raingage"""
+
     __tablename__ = "wgew_raingage"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -35,6 +61,7 @@ class WGEWRaingage(Base):
 
 
 class WGEWPrecipEvent(Base):
+    """Walnut Gulch Experiemental Watershed precipitation event"""
 
     __tablename__ = "wgew_precipevent"
 
@@ -66,4 +93,4 @@ class WGEWPrecipEvent(Base):
     )
 
     def __repr__(self):
-        return ""
+        return "<WGEWPreciptEvent(id={}, created={}, updated={})".format(self.id, self.created, self.updated)
