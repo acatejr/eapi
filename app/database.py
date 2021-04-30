@@ -25,6 +25,3 @@ db_session = scoped_session(
 
 Base = declarative_base()
 Base.query = db_session.query_property()
-
-# SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-# Base = declarative_base()
