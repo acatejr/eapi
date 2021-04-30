@@ -1,3 +1,4 @@
+.env
 env/
 venv/
 *.sqlite
@@ -8,3 +9,5 @@ venv/
 *.DS_Store
 **/__pycache__
 **/.DS_Store
+.DS_Store/
+.pytest_cache/
