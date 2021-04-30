@@ -3,12 +3,14 @@ from pathlib import Path
 import fire
 from cmds.geotools import utm_to_latlon
 from app.models import WGEWRaingage, WGEWPrecipEvent
-from app.models import SRERRaingage
+from app.models import SRERRaingage, SRERPrecipEvent
 from app.database import db_session, engine
 
 db = db_session()
 
 def load_srer_raingages():
+    """Load SRER raingage data"""
+
     print("Importing SRER raingage data.")
     SRERRaingage.query.delete()
     with engine.connect() as con:
@@ -33,6 +35,54 @@ def load_srer_raingages():
                 db.add(rg)
         db.commit()
     db.close()
+
+    print("Done!")
+
+def precip_values(values):
+    output = []
+
+    for k, v in enumerate(values):
+        if v in ['-9999', '']:
+            output.append(None)
+        else:
+            output.append(float(int(v) / 100.00))
+
+    return output
+
+def load_srer_precipevents():
+    """Loads SRER precip event data"""
+    print("Loading SRER precip event data.")
+
+    SRERPrecipEvent.query.delete()
+    with engine.connect() as con:
+        con.execute('ALTER SEQUENCE srer_precipevent_id_seq RESTART WITH 1')
+    db.commit()
+    events = []
+    with open('./data/srer_precip.csv') as f:
+        for i, l in enumerate(f.readlines()):
+            if i > 0:
+                values = l.strip().split('|')
+                station = values[0]
+                year = values[1]
+                precip_vals = precip_values(values[2:])                
+
+                rg = db.query(SRERRaingage).filter_by(station_code=station).first()
+                if rg == None:
+                    rg = db.query(SRERRaingage).filter_by(current_station_name=station).first()
+                
+                for k, v in enumerate(precip_vals):
+                    event = SRERPrecipEvent(
+                        raingage_id = rg.id, 
+                        year = year, 
+                        month = k, 
+                        precip= v
+                    )
+                    events.append(event)
+                
+    if (events):
+        db.bulk_save_objects(events)
+        db.commit()
+        db.close()
 
     print("Done!")
 
@@ -146,4 +196,5 @@ if __name__ == '__main__':
         'load_wgew_raingages': load_wgew_raingages,
         'load_wgew_precipevents': load_wgew_precipevents,
         'load_srer_raingages': load_srer_raingages,
+        'load_srer_precipevents': load_srer_precipevents
     })

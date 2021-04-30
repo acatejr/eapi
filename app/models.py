@@ -7,9 +7,7 @@ from .database import Base
 
 
 class SRERRaingage(Base):
-    """STATION CODE CURRENT STATION NAME X-COORD Y-COORD
-    NE|Northeast|515790|3530174
-
+    """SRER raingage model
     """
 
     __tablename__ = "srer_raingage"
@@ -28,6 +26,40 @@ class SRERRaingage(Base):
 
     updated = Column(DateTime(timezone=True), onupdate=func.now())
 
+    def __repr__(self):
+        return "<SRERRaingage(id={}, station_code={}, current_station_name={}, created={}, updated={})>".format(
+            self.id, self.station_code, self.current_station_name, self.created, self.updated
+        )
+
+
+class SRERPrecipEvent(Base):
+    """Santa Rita Experimental Range precipitation event"""
+
+    __tablename__ = "srer_precipevent"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    year = Column(Integer(), nullable=True)
+
+    month = Column(Integer(), nullable=True)
+
+    # precip = Column(Integer(), nullable=True) # Measured in 100s of inches
+    precip = Column(Numeric(precision=15, scale=5), nullable=True)
+
+    created = Column(DateTime(timezone=True), server_default=func.now())
+
+    updated = Column(DateTime(timezone=True), onupdate=func.now())
+
+    raingage_id = Column(Integer, ForeignKey('srer_raingage.id'))
+
+    raingage = relationship(
+        SRERRaingage,
+        backref=backref(
+            'precipevents', 
+            uselist=True, 
+            cascade='delete,all'
+        )
+    )
 
 class WGEWRaingage(Base):
     """Walnut Gulch Experimental Watershed raingage"""
