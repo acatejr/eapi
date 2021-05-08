@@ -64,21 +64,21 @@ def load_srer_precipevents():
                 values = l.strip().split('|')
                 station = values[0]
                 year = values[1]
-                precip_vals = precip_values(values[2:])                
+                precip_vals = precip_values(values[2:])
 
                 rg = db.query(SRERRaingage).filter_by(station_code=station).first()
                 if rg == None:
                     rg = db.query(SRERRaingage).filter_by(current_station_name=station).first()
-                
+
                 for k, v in enumerate(precip_vals):
                     event = SRERPrecipEvent(
-                        raingage_id = rg.id, 
-                        year = year, 
-                        month = k, 
+                        raingage_id = rg.id,
+                        year = year,
+                        month = k,
                         precip= v
                     )
                     events.append(event)
-                
+
     if (events):
         db.bulk_save_objects(events)
         db.commit()
@@ -95,7 +95,7 @@ def load_wgew_precipevents():
     with engine.connect() as con:
         con.execute('ALTER SEQUENCE wgew_precipevent_id_seq RESTART WITH 1')
     db.commit()
-    
+
     with open('data/wgew_precip_events.csv', 'r') as f:
         current_raingage_id = None
         rg = None
@@ -163,17 +163,17 @@ def load_wgew_raingages():
     with engine.connect() as con:
         con.execute('ALTER SEQUENCE wgew_raingage_id_seq RESTART WITH 1')
     db.commit()
-    
+
     with open('data/wgew_raingages.csv', 'r') as f:
         for i, l in enumerate(f.readlines()):
             if i > 0:
-                values = l.strip().split('|')                
+                values = l.strip().split('|')
                 watershed_d = values[0]
                 gage_id = values[1]
                 east = values[2]
                 north = values[3]
                 elevation = values[4]
-                err = values[5]                
+                err = values[5]
                 lat, lng = utm_to_latlon(12, float(east), float(north))
 
                 rg = WGEWRaingage(
@@ -191,10 +191,22 @@ def load_wgew_raingages():
         db.commit()
     db.close()
 
+def load_all():
+    """Load all eapi data"""
+    SRERPrecipEvent.query.delete()
+    WGEWPrecipEvent.query.delete()
+    SRERRaingage.query.delete()    
+    WGEWRaingage.query.delete()
+    load_srer_raingages()
+    load_srer_precipevents()
+    load_wgew_raingages()
+    load_wgew_precipevents()
+
 if __name__ == '__main__':
     fire.Fire({
         'load_wgew_raingages': load_wgew_raingages,
         'load_wgew_precipevents': load_wgew_precipevents,
         'load_srer_raingages': load_srer_raingages,
-        'load_srer_precipevents': load_srer_precipevents
+        'load_srer_precipevents': load_srer_precipevents,
+        'load_all': load_all
     })
