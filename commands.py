@@ -128,14 +128,14 @@ def load_wgew_precipevents():
 
                 dt = '{}-{}-{}'.format(yr, mo, dy)
 
-                # Raingage 6 is not in the db os it raises exception.
+                # Raingage 6 is not in the db, it raises exception.
                 try:
                     if (current_raingage_id != gage):
                         rg = db.query(WGEWRaingage).filter_by(gage_id=gage, watershed_id=63).first()
                         current_raingage_id = gage
 
                     pe = WGEWPrecipEvent(
-                        raingage_id=rg.id,
+                        raingage_id = rg.id,
                         event_date = dt,
                         event_time = tm,
                         duration = duration,
@@ -144,9 +144,10 @@ def load_wgew_precipevents():
                     )
 
                     events.append(pe)
+
                 except Exception:
                     pass
-
+        
         if events:
             db.bulk_save_objects(events)
 
