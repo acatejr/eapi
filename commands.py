@@ -192,12 +192,31 @@ def load_wgew_raingages():
         db.commit()
     db.close()
 
-def load_all():
+def load_all_data():
     """Load all eapi data"""
-    SRERPrecipEvent.query.delete()
-    WGEWPrecipEvent.query.delete()
-    SRERRaingage.query.delete()    
-    WGEWRaingage.query.delete()
+    records = db.query(SRERPrecipEvent).all()
+    if len(records) > 0:
+        print("Deleting all SRER precip events.")
+        SRERPrecipEvent.query.delete()  
+
+    records = db.query(SRERRaingage).all()
+    if len(records) > 0:
+        print("Deleting all SRERRaingage objects.")
+        SRERRaingage.query.delete()  
+
+    records = db.query(WGEWPrecipEvent).all()
+    if len(records) > 0:
+        print("Deleting all WGEW precip events.")
+        WGEWPrecipEvent.query.delete()  
+    
+    records = db.query(WGEWRaingage).all()
+    if len(records) > 0:
+        print("Deleting all WGEWRaingage objects.")
+        WGEWRaingage.query.delete()  
+
+    db.commit()
+    db.close()
+
     load_srer_raingages()
     load_srer_precipevents()
     load_wgew_raingages()
@@ -209,5 +228,5 @@ if __name__ == '__main__':
         'load_wgew_precipevents': load_wgew_precipevents,
         'load_srer_raingages': load_srer_raingages,
         'load_srer_precipevents': load_srer_precipevents,
-        'load_all': load_all
+        'load_all_data': load_all_data
     })
