@@ -1,40 +1,10 @@
-version: '3.9'
-
 services:
-    postgres:
-        env_file: .env
-        ports:
-            - 5432:5432
-        container_name: eapidb
-        image: postgres:13.3-alpine        
-        volumes:
-            - dbdata:/var/lib/postgresql/data
-        networks:
-            - eapinet
-    app:
-        env_file: .env
-        ports:
-            - 8080:80
-        container_name: eapiapp
-        build:
-            dockerfile: Dockerfile
-            context: .
-        volumes:
-            - $PWD:/eapi
-        networks:
-            - eapinet
+   web:
+      build:
+         context: ./web
+      container_name: web
+      ports:
+         - 8000:8000
+      stdin_open: true
+      tty: true
 
-networks:
-    eapinet:
-volumes:
-    dbdata:
-
-    # nginx:
-    #     env_file: .env
-    #     container_name: nginx
-    #     build:
-    #         dockerfile: Dockerfile
-    #         context: ./nginx
-    #     restart: "no"
-    #     ports:
-    #         - 8000:80
