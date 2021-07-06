@@ -9,7 +9,7 @@ class BaseModel(models.Model):
 
     class Meta:
         app_label = 'wgew'
-        db_tablespace = 'wgew'
+        # db_tablespace = 'wgew'
 
 class Raingage(BaseModel):
     """Domain model for WGEW raingage"""
@@ -29,4 +29,3 @@ class Raingage(BaseModel):
     elevation = IntegerField(blank=True) 
     
     err = DecimalField(blank=True, max_digits=5, decimal_places=1)
-

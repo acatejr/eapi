@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Raingage
 
-# Register your models here.
+@admin.register(Raingage)
+class RaingageAdmin(admin.ModelAdmin):
+    pass

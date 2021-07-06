@@ -3,8 +3,26 @@ services:
       build:
          context: ./web
       container_name: web
+      env_file: ./.env
       ports:
-         - 8000:8000
+         - 8000:8000      
+      networks:
+         - eapi
       stdin_open: true
       tty: true
-
+      volumes:
+         - $PWD/web:/usr/src/app
+   db:
+      build:
+         context: ./db
+      container_name: db
+      ports:
+         - 5432:5432
+      volumes: 
+         - dbdata:/var/lib/postgresql/data
+      networks:
+         - eapi
+networks:
+   eapi:
+volumes: 
+   dbdata:
