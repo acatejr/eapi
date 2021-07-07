@@ -9,7 +9,6 @@ class BaseModel(models.Model):
 
     class Meta:
         app_label = 'wgew'
-        # db_tablespace = 'wgew'
 
 class Raingage(BaseModel):
     """Domain model for WGEW raingage"""
@@ -18,14 +17,15 @@ class Raingage(BaseModel):
     
     gage_id = IntegerField(blank=True)
     
-    east = IntegerField(blank=True)
+    east = IntegerField(blank=True, null=True)
     
-    north = IntegerField(blank=True) 
+    north = IntegerField(blank=True, null=True) 
     
-    latitude = DecimalField(blank=True, max_digits=15, decimal_places=5)
+    latitude = DecimalField(blank=True, null=True, max_digits=15, decimal_places=5)
     
-    longitude = DecimalField(blank=True, max_digits=15, decimal_places=5)
+    longitude = DecimalField(blank=True, null=True, max_digits=15, decimal_places=5)
 
-    elevation = IntegerField(blank=True) 
+    elevation = IntegerField(blank=True, null=True) 
     
-    err = DecimalField(blank=True, max_digits=5, decimal_places=1)
+    err = DecimalField(blank=True, null=True, max_digits=5, decimal_places=1)
+
