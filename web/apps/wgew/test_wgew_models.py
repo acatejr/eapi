@@ -12,4 +12,16 @@ class TestModels:
         )
 
     def test_precipevent_create(self):
+        """
+        Raingage.objects.create(
+            gage_id=1,
+            watershed_id=1
+        )
+        """
+
+        """
+        rg = Raingage(gage_id=1, watershed_id=1)
+        rg.save()
+        """
+        
         PrecipEvent.objects.create()

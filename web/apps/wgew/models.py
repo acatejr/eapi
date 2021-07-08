@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import IntegerField, DecimalField, DateTimeField
+from django.db.models import IntegerField, DecimalField, DateTimeField, TimeField, DateField, CharField
 
 class BaseModel(models.Model):
 
@@ -28,4 +28,19 @@ class Raingage(BaseModel):
     elevation = IntegerField(blank=True, null=True) 
     
     err = DecimalField(blank=True, null=True, max_digits=5, decimal_places=1)
+
+class PrecipEvent(BaseModel):
+    """Domain model for WGEW precipt event"""
+    
+    event_date = DateField(blank=True, null=True)
+
+    event_time = TimeField(blank=True, null=True)
+
+    duration = DecimalField(blank=True, null=True, max_digits=15, decimal_places=5)
+
+    depth = DecimalField(blank=True, null=True, max_digits=15, decimal_places=5)
+
+    time_est = CharField(max_length=2, blank=True, null=True)
+
+    rain_gage = models.ForeignKey(Raingage, blank=True, null=True, on_delete=models.CASCADE)
 
