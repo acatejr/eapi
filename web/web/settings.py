@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'apps.wgew',
+    'apps.srer',
 ]
 
 MIDDLEWARE = [
