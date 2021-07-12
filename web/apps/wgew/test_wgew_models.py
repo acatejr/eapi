@@ -18,6 +18,7 @@ class TestModels:
         )
         rg = Raingage.objects.get(id=instance.id)
         assert rg is not None
+        assert rg.id == instance.id
 
     def test_raingage_update(self):
         instance = Raingage.objects.create(

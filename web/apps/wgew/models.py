@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import IntegerField, DecimalField, DateTimeField, TimeField, DateField, CharField
 
-class BaseModel(models.Model):
+class WGEWBaseModel(models.Model):
 
     created = DateTimeField(auto_now_add=True)
 
@@ -10,7 +10,7 @@ class BaseModel(models.Model):
     class Meta:
         app_label = 'wgew'
 
-class Raingage(BaseModel):
+class Raingage(WGEWBaseModel):
     """Domain model for WGEW raingage"""
 
     watershed_id = IntegerField(blank=True)
@@ -29,7 +29,7 @@ class Raingage(BaseModel):
     
     err = DecimalField(blank=True, null=True, max_digits=5, decimal_places=1)
 
-class PrecipEvent(BaseModel):
+class PrecipEvent(WGEWBaseModel):
     """Domain model for WGEW precipt event"""
     
     event_date = DateField(blank=True, null=True)
