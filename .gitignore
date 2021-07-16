@@ -13,3 +13,5 @@ venv/
 .DS_Store/
 .pytest_cache/
 pgdata/
+web/fixtures/initial_data.json
+
