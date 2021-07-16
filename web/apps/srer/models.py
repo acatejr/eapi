@@ -30,3 +30,5 @@ class PrecipEvent(SRERBaseModel):
 
     rain_gage = models.ForeignKey(Raingage, blank=True, null=True, on_delete=models.CASCADE)
 
+    class Meta:
+        verbose_name_plural = 'Precipitation Events'
