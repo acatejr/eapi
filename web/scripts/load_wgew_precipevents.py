@@ -3,7 +3,8 @@ from apps.wgew.models import PrecipEvent, Raingage
 def run(*args):
     if len(PrecipEvent.objects.all()) > 0:
         PrecipEvent.objects.all().delete()
-        
+
+    print("Loading WGEW precip events.")
     with open('./data/wgew_precip_events.csv') as f:
         events = []
         rg = None
@@ -55,3 +56,4 @@ def run(*args):
                 except Exception:
                     pass
     f.close()
+    print("Done!")
