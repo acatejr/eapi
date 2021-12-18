@@ -6,6 +6,7 @@ class WGEWRaingageBase(BaseModel):
 
 class WGEWRaingage(WGEWRaingageBase):
     id: int
+    watershed_id: int
 
     class Config:
         orm_mode = True
