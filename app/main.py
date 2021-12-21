@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from typing import Optional
 from sqlalchemy.orm import Session
 from . import crud, models, schemas
@@ -22,21 +22,19 @@ async def health_check():
     return {"msg": msg}
 
 @app.get("/api/v1/wgewgages/")
-async def wgewgages():
-    """Get all raingages."""
-
-    data = [
-        {"wsid": 1, "gageid": 1},
-        {"wsid": 2, "gageid": 2}
-
-    ]
+async def wgewgages(db: Session = Depends(get_db)):
+    """Get all raingages.
+    """
+    
+    data = crud.get_wgew_raingages(db)
     return {"data": data}
 
 @app.get("/api/v1/wgewgages/{wsid}/{gageid}")
-async def wgewgages(wsid: int, gageid: int):
+async def wgewgages(wsid: int, gageid: int, db: Session = Depends(get_db)):
     """Get a raingage by watershed id and raingage id.
     """
-    data = {"wsid": 1, "gageid": 1}
+
+    data = crud.get_wgew_watershed_raingage(db, wsid, gageid)
     return {"payload": data}
 
 @app.get("/api/v1/wgewprecip/{wsid}/{gageid}")
