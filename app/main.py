@@ -1,12 +1,16 @@
 from fastapi import FastAPI, Depends
 from typing import Optional
+import graphql
 from sqlalchemy.orm import Session
+from strawberry.fastapi import GraphQLRouter
 from . import crud, models, schemas
 from .database import SessionLocal, engine
 
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+graphql_app = GraphQLRouter(schemas.schema)
+app.include_router(graphql_app, prefix="/graphql")
 
 # Dependency
 def get_db():
@@ -35,12 +39,12 @@ async def wgewgages(wsid: int, gageid: int, db: Session = Depends(get_db)):
     """
 
     data = crud.get_wgew_watershed_raingage(db, wsid, gageid)
-    return {"payload": data}
+    return {"data": data}
 
 @app.get("/api/v1/wgewprecip/{wsid}/{gageid}")
-async def wgewprecip(wsid: int, gageid: int):
+async def wgewprecip(wsid: int, gageid: int, db: Session = Depends(get_db)):
     """Retrieves the specified watershed and raingage precip events.
     """
 
-    data = []
+    data = crud.get_wgew_watershed_gage_precip(db, wsid, gageid)
     return {"data": data}

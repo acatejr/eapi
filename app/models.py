@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float, Date, Time
 from sqlalchemy.orm import relationship
 from .database import Base
 
@@ -9,35 +9,29 @@ class WGEWRaingage(Base):
     __tablename__ = "wgew_raingages"
 
     id = Column(Integer, primary_key=True, index=True)
-    gage_id = Column(Integer)
+    gage_id = Column(Integer, unique=True, index=True)
     watershed_id = Column(Integer)
     east = Column(Integer)
     north = Column(Integer)
     elevation = Column(Integer)
     err = Column(Float)
+    precip_events = relationship("WGEWPrecipEvent")
 
-# class User(Base):
+    def __repr__(self) -> str:
+        return f"Raigage: {self.id}, gage_id: {self.gage_id}, watershed_id: {self.watershed_id}"
 
-#     __tablename__ = "users"
+class WGEWPrecipEvent(Base):
 
+    __tablename__ = "wgew_precip_events"
 
-#     id = Column(Integer, primary_key=True, index=True)
-#     email = Column(String, unique=True, index=True)
-#     hashed_password = Column(String)
-#     is_active = Column(Boolean, default=True)
+    id = Column(Integer, primary_key=True, index=True)
+    gage_id = Column(Integer, ForeignKey('wgew_raingages.gage_id'))
+    watershed_id = Column(Integer)
+    event_date = Column(Date)
+    event_time = Column(Time)
+    duration = Column(Integer)
+    depth = Column(Float)
+    time_est = Column(String)
 
-#     items = relationship("Item", back_populates="owner")
-
-
-
-# class Item(Base):
-
-#     __tablename__ = "items"
-
-
-#     id = Column(Integer, primary_key=True, index=True)
-#     title = Column(String, index=True)
-#     description = Column(String, index=True)
-#     owner_id = Column(Integer, ForeignKey("users.id"))
-
-#     owner = relationship("User", back_populates="items")
+    def __repr__(self) -> str:
+        return f"Precip Event: {self.id}, gage_id: {self.gage_id}, watershed_id: {self.watershed_id}"

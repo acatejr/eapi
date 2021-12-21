@@ -9,13 +9,8 @@ load_dotenv()
 PGUSER = os.getenv('POSTGRES_USER')
 PGPASS = os.getenv('POSTGRES_PASSWORD')
 
-# SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
 SQLALCHEMY_DATABASE_URL = f"postgresql://{PGUSER}:{PGPASS}@localhost/postgres"
 
-# engine = create_engine(
-#   SQLALCHEMY_DATABASE_URL, 
-#   connect_args={"check_same_thread": False}
-# )
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL,
     connect_args={}
