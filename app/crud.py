@@ -3,9 +3,14 @@ from sqlalchemy.orm import Session
 from . import models, schemas
 
 def get_wgew_raingages(db: Session):
+    """Retrieve all WGEW raingages
+    """
+
     return db.query(models.WGEWRaingage).all()
 
 def get_wgew_watershed_raingage(db: Session, wsid: int, gageid: int):
+    """Retrieve a WGEW raingage for a specific watershed
+    """
 
     return db.query(models.WGEWRaingage).filter(
             models.WGEWRaingage.watershed_id == wsid

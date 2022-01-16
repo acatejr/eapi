@@ -1,0 +1,5 @@
+ "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear"
+ },
