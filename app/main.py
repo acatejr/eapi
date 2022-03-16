@@ -29,7 +29,7 @@ async def health_check():
 async def wgewgages(db: Session = Depends(get_db)):
     """Get all raingages.
     """
-    
+
     data = crud.get_wgew_raingages(db)
     return {"data": data}
 
